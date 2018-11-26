@@ -3,36 +3,37 @@
 @section('contenido')
 
 <h1>
-  Aqui estaran la lista de los alumnos
+  Lista de clientes
 </h1>
 
-<a href="{{action('AlumnoController@create')}}">nuevo alumno</a>
-<a href="{{route('alumno.create')}}" class="btn btn-succes">nueva alumno (route)</a>
+<a href="{{action('ClienteController@create')}}">Dar de alta cliente</a>
+<a href="{{route('cliente.create')}}" class="btn btn-succes">Dar de alta cliente (route)</a>
 
 
-@if($alumnos->count()==0)
+@if($clientes->count()==0)
 <div class='alert alert-warning'>
-  no tienes alumnos registrados
+  No hay clientes registrados
 </div>
 @else
 
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Nombre</th>
-      <th>Codigo</th>
-      <th>Carrera</th>
-      <th>ultima actualizacion</th>
+      <th>Correo</th>
+      <th>Pais</th>
     </tr>
   </thead>
   <body>
-    @foreach($alumnos as $alumno)
+    @foreach($clientes as $cliente)
     <tr>
-      <td><a class="btn btn-sm btn-info" href="{{route('alumno.show',$alumno->id)}}"</a><</td>
-      <td>{{$alumno->nombre}}</td>
-      <td>{{$alumno->codigo}}</td>
-      <td>{{$alumno->carrera}}</td>
-      <td>{{$alumno->updated_at}}</td>
+      <td><a class="btn btn-sm btn-info" href="{{route('cliente.show',$cliente->id)}}"</a><</td>
+      <td>{{$cliente->id}}</td>
+      <td>{{$cliente->nombre}}</td>
+      <td>{{$cliente->correo}}</td>
+      <td>{{$cliente->pais}}</td>
+      <td>{{$cliente->updated_at}}</td>
     </tr>
     @endforeach
   </body>

@@ -3,7 +3,7 @@
 </div>
   
   <select name="Materias">
-    @foreach($materias as $materia)
-    <option value="{{$materias->id}}">{{$materia</option>
+    @foreach($boletos as $boleto)
+    <option value="{{$boletos->id}}">{{$boleto</option>
   </select>
   

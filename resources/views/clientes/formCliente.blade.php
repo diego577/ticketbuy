@@ -1,17 +1,17 @@
 @extends('layouts.mi-tema')
 
 @section('contenido')
-<form action="{{route('alumno.store')}}", method="POST">
+<form action="{{route('cliente.store')}}", method="POST">
   {{csrf_field()}}
   
-  <label for="Nombre">Nombre: </label>
+  <label for="nombre">Nombre: </label>
   <input type="text" name="nombre">
   <br>
-  <label for="codigo">Codigo: </label>
-  <input type="text" name="codigo">
+  <label for="correo">Correo: </label>
+  <input type="text" name="correo">
   <br>
-  <label for="materia">Materia: </label>
-  <input type="text" name="materia">
+  <label for="pais">Pais: </label>
+  <input type="text" name="pais">
   <br>  
   <input type="submit" name="Guardar">
 </form>

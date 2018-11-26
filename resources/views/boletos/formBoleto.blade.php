@@ -6,30 +6,36 @@
 
 @if()
 
-@if(isset($materia))
-<form action="{{route('materia.update',$materia->id)}}", method="POST">
+@if(isset($boleto))
+<form action="{{route('boleto.update',$boleto->id)}}", method="POST">
   <input type="hidden" name="_method" value="PATCH">
   @else
-  <form action="{{route('materia.store')}}", method="POST">
+  <form action="{{route('boleto.store')}}", method="POST">
     @endif
   {{csrf_field()}}
     <div class="form-gorud">
-      <label for="materia">Materia</label>
-      <input name="materia" value="{{isset($materia)?$materia->materia: ''}}" class
+      <label for="boleto">Nombre del evento</label>
+      <input name="boleto" value="{{isset($boleto)?$boleto->boleto: ''}}" class
              <small class="form"
     </div>
   
-  <label for="materia">Materia: </label>
-  <input type="text" name="nombre_materia">
+  <label for="nombre_evento">Nombre del evento: </label>
+  <input type="text" name="nombre_evento">
   <br>
-  <label for="crn">CRN: </label>
-  <input type="text" name="crn">
+  <label for="tipo_evento">Tipo de evento: </label>
+  <input type="text" name="tipo_evento">
   <br>
-  <label for="seccion">Seccion: </label>
-  <input type="text" name="seccion">
+  <label for="ciudad">Ciudad: </label>
+  <input type="text" name="ciudad">
   <br> 
-  <label for="horario">Horario: </label>
-  <input type="time" name="horario">
+  <label for="lugar">Lugar del evento: </label>
+  <input type="text" name="lugar">
+  <br>
+  <label for="fecha">Fecha del evento: </label>
+  <input type="time" name="fecha">
+  <br>
+  <label for="precio">Costo del boleto: </label>
+  <input type="money" name="precio">
   <br>
   <input type="submit" name="Guardar">
 </form>

@@ -3,39 +3,40 @@
 @section('contenido')
 
 <h1>
-  Aqui estara el listado de materias
+  Lista de boletos
 </h1>
 
-<a href="{{action('MateriaController@create')}}">nueva materia (action)</a>
-<a href="{{route('materia.create')}}" class="btn btn-succes">nueva materia (route)</a>
+<a href="{{action('BoletoController@create')}}">Agregar evento (action)</a>
+<a href="{{route('boleto.create')}}" class="btn btn-succes">Agregar evento (route)</a>
 
-@if($materias->count()==0)
+@if($boletos->count()==0)
 <div class='alert alert-warning'>
-  no tienes materias registradas
+  No hay eventos registrados
 </div>
 @else
 
 <table>
   <thead>
     <tr>
-      <th>Materia</th>
-      <th>crn</th>
-      <th>seccion</th>
-      <th>horario</th>
-      <th>ultima actualizacion</th>
-      <th>Usuario</th>
+      <th>Nombre del evento</th>
+      <th>Tipo del evento</th>
+      <th>Ciudad</th>
+      <th>Lugar del evento</th>
+      <th>fecha</th>
+      <th>Costo</th>
     </tr>
   </thead>
   <body>
-    @foreach($materias as $materia)
+    @foreach($boletos as $boleto)
     <tr>
-      <td><a class="btn btn-sm btn-info" href="{{route('materia.show',$materia->id)}}"</a><</td>
-      <td>{{$materia->nombre_materia}}</td>
-      <td>{{$materia->crn}}</td>
-      <td>{{$materia->seccion}}</td>
-      <td>{{$materia->horario}}</td>
-      <td>{{$materia->updated_at}}</td>
-      <td>{{$materia->user}}</td>
+      <td><a class="btn btn-sm btn-info" href="{{route('boleto.show',$boleto->id)}}"</a><</td>
+      <td>{{$boleto->nombre_evento}}</td>
+      <td>{{$boleto->tipo_evento}}</td>
+      <td>{{$boleto->ciudad}}</td>
+      <td>{{$boleto->lugar}}</td>
+      <td>{{$boleto->fecha}}</td>
+      <td>{{$boleto->precio}}</td>
+      <td>{{$boleto->updated_at}}</td>
     </tr>
     @endforeach
   </body>
