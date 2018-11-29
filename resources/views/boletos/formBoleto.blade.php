@@ -1,6 +1,6 @@
-@extends('layouts.mi-tema')
+@extends('admin.layout')
 
-@section('contenido')
+@section('content')
 <div
 <div class="little">
 

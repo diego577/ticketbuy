@@ -31,6 +31,14 @@ class BoletoController extends Controller
         return view('boletos.formBoleto');
     }
 
+    public function store(Request $request)
+    {
+        Boleto::create($request->all());
+      //return redirect()->route('cliente.index');
+      
+      return "Cliente creado con exito";
+    }
+
      public function show(Boleto $boleto)
     {
       $clientes=Cliente::all();

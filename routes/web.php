@@ -29,10 +29,16 @@ Route::get('/inicio',function (){
 
 Auth::routes();
 
-Route::get('/home','HomeController@index')->name('home');
+Route::resource('cliente','ClienteController');
+
+//Route::get('/','HomeController@index');
 Route::post('boleto\agrega-cliente','MateriaController@agregaCliente')->name('boleto.agregaCliente');
 Route::resource('boleto','BoletoController');
 Route::resource('cliente','ClienteController');
 Route::resource('boleto.cliente','BoletoClienteController');//conexion para controlador pivote
+
+Route::get('/',function(){
+	return view('admin.dashboard');
+});
 
 ?>

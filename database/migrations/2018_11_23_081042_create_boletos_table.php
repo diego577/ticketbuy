@@ -20,7 +20,7 @@ class CreateBoletosTable extends Migration
             $table->string('ciudad');
             $table->string('lugar');
             $table->time('fecha');
-            //$table->money_format(format, number);precio
+            $table->decimal('precio', 8, 2);
             $table->timestamps();
         });
     }

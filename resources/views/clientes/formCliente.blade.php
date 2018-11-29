@@ -1,6 +1,6 @@
-@extends('layouts.mi-tema')
+@extends('admin.layout')
 
-@section('contenido')
+@section('content')
 <form action="{{route('cliente.store')}}", method="POST">
   {{csrf_field()}}
   

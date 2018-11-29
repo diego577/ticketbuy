@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.layout')
 
 @section('content')
 <form action="/boleto/update/{{$id}}", method="POST">

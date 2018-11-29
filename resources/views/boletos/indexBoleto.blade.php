@@ -1,10 +1,6 @@
-@extends('layouts.mi-tema')
+@extends('admin.layout')
 
-@section('contenido')
-
-<h1>
-  Lista de boletos
-</h1>
+@section('content')
 
 <a href="{{action('BoletoController@create')}}">Agregar evento (action)</a>
 <a href="{{route('boleto.create')}}" class="btn btn-succes">Agregar evento (route)</a>
